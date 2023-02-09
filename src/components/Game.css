@@ -1,0 +1,112 @@
+.game {
+    width: clamp(400px, 80%, 1220px);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: top;
+}
+.top > div {
+    margin: 0;
+}
+
+.tip > span, .points > h4 > span {
+    font-weight: 300;
+    margin: 0 .5rem;
+}
+
+.points > p {
+    font-size: .8rem;
+} .points > p > span {
+    font-weight: 600;
+}
+
+.wordContainer {
+    border: 2px solid var(--platinum);
+    background-color: var(--white-15);
+    border-radius: .4rem;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter, 
+.blackSquare {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 .25rem;
+    
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    
+    background: var(--white);
+    color: var(--black);
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.inputLetter {
+    text-align: center;
+    font-family: var(--poppins);
+    font-size: 2rem;
+
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid var(--white-15);
+    border-bottom: 2px solid var(--white);
+    border-radius: .3rem;
+    background-color: var(--black-50);
+    color: var(--white);
+} .inputLetter:focus {
+    border: 1px solid var(--white-50);
+    border-bottom: 2px solid var(--white);
+    outline: none;
+}
+
+form > button {
+    font-family: var(--poppins);
+    font-weight: 300;
+
+    width: clamp(60px, 40%, 130px);
+    padding: .5rem 0;
+    
+    background-color: var(--platinum);
+    color: var(--black);
+    border: 1px solid #ffffff00;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: all .3s;
+} form > button:hover {
+    border-color: var(--white);
+    background-color: var(--black-50);
+    color: var(--white);
+}
+
+.wrongLettersContainer {
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 500;
+} .wrongLettersContainer > p {               
+    background-color: var(--white-15);
+    padding: 0 .5rem;
+} .wrongLettersContainer > p > span {
+    font-weight: 300;
+}

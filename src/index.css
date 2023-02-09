@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --poppins: 'Poppins', sans-serif;
+  
+
+  --black: #202020;
+  --black-75: #20202075;
+  --black-50: #20202050;
+  --black-15: #20202015;
+
+  --white: #fefefe;
+  --white-75: #fefefe75;
+  --white-50: #fefefe50;
+  --white-15: #fefefe15;
+
+  --platinum: #E0E1DD;
+
+  --blue-might: #415A77;
+  --blue-two: #778DA9;
+  --blue-dark: #0D1B2A;
+
+  --silver-blue: #778DA9;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--poppins);
+  margin: 0;
+  padding: 0;
+  outline: none;
+
+  background-color: var(--blue-dark);
+  color: var(--white);
+}
+
+::-webkit-scrollbar {
+  width: .3rem;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--black-15);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--white-15);
+} ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--white-50);
+} 
+
+.text-left { text-align: left;}
+.text-center { text-align: center;}
+.text-right { text-align: right;}
+
+.fw-light { font-weight: 300;}
+.fw-normal { font-weight: 500;}
+.fw-medium { font-weight: 600;}
+.fw-bold { font-weight: 800;}
+.fw-bolder { font-weight: bolder;}
+
+.mt-1 { margin-top: .5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mt-5 { margin-top: 2.5rem; }
+.mt-6 { margin-top: 3rem; }
+
+.mb-1 { margin-bottom: .5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+.mb-5 { margin-bottom: 2.5rem; }
+.mb-6 { margin-bottom: 3rem; }
