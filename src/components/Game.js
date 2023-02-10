@@ -1,7 +1,29 @@
 import './Game.css'
 
-export default function Game({verifyLetter, pickedWord, pickedCategory, letters, guessedLetters, wrongLetters, guesses, score}) {
-    console.log(letters)
+import { useState, useRef} from 'react'
+
+export default function Game({
+    verifyLetter, 
+    pickedWord, 
+    pickedCategory, 
+    letters, 
+    guessedLetters, 
+    wrongLetters, 
+    guesses, 
+    score}) {
+
+    const [letter, setLetter] = useState('')
+    const letterInputRef  = useRef(null)
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        verifyLetter(letter)
+
+        setLetter('')
+        letterInputRef.current.focus()
+    }
+
     return(
         <div className="game">
             <div className="top">
@@ -13,8 +35,11 @@ export default function Game({verifyLetter, pickedWord, pickedCategory, letters,
                     <div className="wrongLettersContainer">
                         <p>
                             Letras já utilizadas: 
-                            <span>a, </span>
-                            <span>b, </span>
+                            {
+                                wrongLetters.map((letter, i) => 
+                                <span key={i}> {letter}, </span>                              
+                                )
+                            }
                         </p>
                     </div>
                 </div>
@@ -24,26 +49,34 @@ export default function Game({verifyLetter, pickedWord, pickedCategory, letters,
                         Pontuação: <span>{score}</span>
                         </h4>
                         <p>
-                            Você ainda tem  <span>{guesses}</span> chance(s)
+                        Você ainda tem  <span>{guesses}</span> chance(s)
                         </p>
                     </div>
                 </div>
             </div>
             <div className="wordContainer mt-6">
                 {
-                    letters.map((letter, i) => {
+                    letters.map((letter, i) => 
                         guessedLetters.includes(letter) ? (
                             <span key={i} className="letter">{letter}</span>
                         ) : (
                             <span key={i} className="blackSquare"></span>
                         )
-                    })
+                    )
                 }
             </div>
             <div className="letterContainer mt-4">
                 <p>Tente advinhar uma letra da palavra</p>
-                <form>
-                    <input type="text" name='letter' maxLength='1' className='inputLetter' required autoComplete='off'/>
+                <form onSubmit={handleSubmit}>
+                    <input 
+                    type="text" 
+                    name='letter' 
+                    maxLength='1' 
+                    className='inputLetter' required autoComplete='off' 
+                    onChange={(e) => setLetter(e.target.value)} 
+                    value={letter}
+                    ref={letterInputRef}
+                    />
                     <button className='buttonPlay'>Jogar</button>
                 </form>
             </div>

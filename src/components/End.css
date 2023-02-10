@@ -1,0 +1,28 @@
+.end {
+    text-align: center;
+}
+.end h4 {
+    font-weight: 300;
+} 
+
+.end button {
+    font-family: var(--poppins);
+    font-weight: 500;
+    color: var(--black);
+
+    width: clamp(100px, 25%, 250px);
+    padding: .5rem;
+    cursor: pointer;
+
+    border-radius: 4rem;
+    background-color: var(--platinum);
+    color: var(--blue-dark);
+    border: 1px solid var(--white-50);
+
+    transition: background .5s;
+} .end button:hover {
+    
+    background-color: var(--white-15);
+    border-color: var(--white-75);
+    color: var(--white);
+}
